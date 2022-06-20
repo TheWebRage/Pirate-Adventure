@@ -27,8 +27,10 @@ public class PlayerCollision : MonoBehaviour
         // If the object that was collided with has the enemy tag
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Destroy(other.gameObject);
+            
             // Open the battle scene
-            UnityEngine.SceneManagement.SceneManager.LoadScene("BattleScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("BattleScene", LoadSceneMode.Additive);
         }
     }
 
