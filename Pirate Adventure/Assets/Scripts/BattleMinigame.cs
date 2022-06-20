@@ -12,12 +12,22 @@ public class BattleMinigame : MonoBehaviour
     public int speed = 50;
     public float leftBar;
     public float rightBar;
+    public float winLeft;
+    public float winRight;
     public GameObject bar;
+    public float pauseTime = 0.0f;
+    public GameObject sceneManager;
+    
     private Rigidbody2D meterRb;
     private SpriteRenderer meterSpriteRenderer;
     private Rigidbody2D barRb;
     private int direction = 1;
-    
+    private int tempSpeed = 0;
+
+    private float nextActionTime = 0.0f;
+    public float period = 1.0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,16 +51,28 @@ public class BattleMinigame : MonoBehaviour
         // Move the bar
         barRb.velocity = new Vector2(speed * direction, 0);
         
-        // TODO: Find position when pressed
-        // TODO: Win condition
-        // TODO: lose health condition
         // TODO: lose minigame condition
 
-        if (Input.anyKey)
+        nextActionTime += Time.deltaTime;
+        
+        if (Input.GetKey(KeyCode.Space))
         {
-            // Temp win condition
-            UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName("SampleScene"));
-            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("BattleScene");
+            if (nextActionTime >= period)
+            {
+                nextActionTime = 0;
+
+                if (barRb.position.x > winLeft && barRb.position.x < winRight)
+                {
+                    // Win condition
+                    Helpers.SwitchScene("SampleScene", "BattleScene");
+                }
+                else
+                {
+                    //Lose Health 
+                    sceneManager.GetComponent<SceneManager>().damagePlayer(1);
+                }
+            }
         }
+        
     }
 }

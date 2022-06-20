@@ -30,7 +30,7 @@ public class PlayerCollision : MonoBehaviour
             Destroy(other.gameObject);
             
             // Open the battle scene
-            UnityEngine.SceneManagement.SceneManager.LoadScene("BattleScene", LoadSceneMode.Additive);
+            Helpers.OpenNewScene("BattleScene");
         }
     }
 

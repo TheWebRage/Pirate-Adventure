@@ -29,6 +29,7 @@
 Temp/
 obj/
 Pirate\ Adventure/Library/
+*.log
 
 # Gradle cache directory
 .gradle/

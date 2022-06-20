@@ -14,8 +14,31 @@ public class SceneManager : MonoBehaviour
     public GameObject player;
     public GameObject PlayerSpawnPoint;
 
+    public static int playerHealth = 5;
     private static bool isSpawned = false;
 
+    /// <summary>
+    /// Damages player by an amount of damage
+    /// </summary>
+    /// <param name="damage"></param>
+    public void damagePlayer(int damage)
+    {
+        playerHealth -= damage;
+
+        if (playerHealth <= 0)
+        {
+            lose();
+        }
+    }
+
+    /// <summary>
+    /// This will run the lose logic after the lose condition has been met
+    /// </summary>
+    public void lose()
+    {
+        Helpers.ChangeScene("LoseScene");
+    }
+    
     private void Awake()
     {
     }
@@ -27,7 +50,6 @@ public class SceneManager : MonoBehaviour
         {
             player.transform.position = PlayerSpawnPoint.transform.position;
             Instantiate(player);
-            DontDestroyOnLoad(player);
             isSpawned = true;
         }
     }
@@ -37,4 +59,5 @@ public class SceneManager : MonoBehaviour
     {
         
     }
+    
 }
