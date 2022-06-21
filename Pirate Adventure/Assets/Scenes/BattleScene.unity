@@ -139,7 +139,17 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 244096407}
+    - target: {fileID: 4941249948614863510, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
+        type: 3}
+      propertyPath: PlayerSpawnPoint
+      value: 
+      objectReference: {fileID: 2013379794}
+    - target: {fileID: 4941249948614863510, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
+        type: 3}
+      propertyPath: playerSpriteRenderer
+      value: 
+      objectReference: {fileID: 2013379795}
     - target: {fileID: 4941249948614863511, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
         type: 3}
       propertyPath: m_RootOrder
@@ -200,6 +210,24 @@ PrefabInstance:
 --- !u!4 &244096405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4941249948614863511, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
+    type: 3}
+  m_PrefabInstance: {fileID: 244096404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &244096406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4941249948614863510, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
+    type: 3}
+  m_PrefabInstance: {fileID: 244096404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244096407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dee3b7855174f4484b57d5ac7666a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &244096407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4941249948614863505, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
     type: 3}
   m_PrefabInstance: {fileID: 244096404}
   m_PrefabAsset: {fileID: 0}
@@ -308,7 +336,7 @@ MonoBehaviour:
   winRight: 12.25
   bar: {fileID: 2073939672}
   pauseTime: 0.5
-  sceneManager: {fileID: 1099516678}
+  sceneManager: {fileID: 244096406}
   period: 1
 --- !u!50 &632290706
 Rigidbody2D:
@@ -415,12 +443,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1099516678 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4941249948614863505, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
-    type: 3}
-  m_PrefabInstance: {fileID: 244096404}
-  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &1411162122
 LightingSettings:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerCollision : MonoBehaviour
 {
+    public SceneManager sceneManager; 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +29,14 @@ public class PlayerCollision : MonoBehaviour
         // If the object that was collided with has the enemy tag
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            // Destroy(other.gameObject);
             
             // Open the battle scene
-            Helpers.OpenNewScene("BattleScene");
+            // Helpers.OpenNewScene("BattleScene");
+            
+            // Take user damage
+            sceneManager.damagePlayer(1); // TODO: create file to take from
+            sceneManager.updatePlayerSprite();
         }
     }
 

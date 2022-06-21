@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 18872233}
   - component: {fileID: 18872232}
   - component: {fileID: 18872235}
+  - component: {fileID: 18872237}
+  - component: {fileID: 18872236}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -246,6 +248,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &18872236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18872231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84292aff007046143b236b0fac2c3ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.05
+  period: 1
+  maxSpeed: 5
+--- !u!114 &18872237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18872231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3288798f5ea165488ba109f46411c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,9 +700,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4941249948614863505, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4941249948614863510, guid: 77e6df574d3b1cc4787b0c8a3ddcbab6,
         type: 3}
-      propertyPath: player
+      propertyPath: playerPrefab
       value: 
       objectReference: {fileID: 241814928939100607, guid: bf15d0d1687803141b6c629461ba8228,
         type: 3}

@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5976743, y: -0.5807236, z: -1.0086205}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,3 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02dee3b7855174f4484b57d5ac7666a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 241814928939100607, guid: bf15d0d1687803141b6c629461ba8228, type: 3}
+  PlayerSpawnPoint: {fileID: 0}
+  playerSpriteRenderer: {fileID: 241814928939100606, guid: bf15d0d1687803141b6c629461ba8228,
+    type: 3}
+  playerHealthSprites:
+  - {fileID: 21300000, guid: cb8957d7864eaab46b39f3a7b62bc9a1, type: 3}
+  - {fileID: 21300000, guid: c22cfc080b269d847badfc565a9a559a, type: 3}
+  - {fileID: 21300000, guid: fa2ae149a9791f6479bebbbfbc857dca, type: 3}
+  - {fileID: 21300000, guid: 135dd2e72e3c5c24f86ca73cb44d3bae, type: 3}
+  - {fileID: 21300000, guid: 8f488cde78a88c84a8d568d023b3b8b2, type: 3}

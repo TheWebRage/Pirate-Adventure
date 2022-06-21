@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 /// <summary>
 /// Holds information and logic for the player movement
@@ -6,9 +7,12 @@
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float speed = 50;
+    public float speed = 0.1f;
+    
     private float nextActionTime = 0.0f;
     public float period = 1.0f;
+
+    public float maxSpeed = 20.0f;
 
     void Start()
     {
@@ -22,35 +26,49 @@ public class PlayerMovement : MonoBehaviour
         {
             nextActionTime -= period;
 
-            if (Input.GetKey(KeyCode.D))
+            // X-Axis logic
+            if (Math.Abs(rb.velocity.x) <= maxSpeed)
             {
-                // rb.velocity = new Vector2(speed, rb.velocity.y);
-                rb.position = new Vector2(rb.position.x + speed, rb.position.y);
+                if (Input.GetKey(KeyCode.D))
+                {
+                    //rb.velocity = new Vector2(speed, rb.velocity.y);
+                    rb.AddForce(new Vector2(speed, rb.velocity.y));
+                    //rb.position = new Vector2(rb.position.x + speed, rb.position.y);
+                }
+                else if (Input.GetKey(KeyCode.A))
+                {
+                    //rb.velocity = new Vector2(-speed, rb.velocity.y);
+                    rb.AddForce(new Vector2(-speed, rb.velocity.y));
+                    //rb.position = new Vector2(rb.position.x - speed, rb.position.y);
+                }
+                else
+                {
+                    //rb.velocity = new Vector2(0, rb.velocity.y);
+                }
             }
-            else if (Input.GetKey(KeyCode.A))
+
+            // Y-Axis Logic
+            if (Math.Abs(rb.velocity.y) <= maxSpeed)
             {
-                // rb.velocity = new Vector2(-speed, rb.velocity.y);
-                rb.position = new Vector2(rb.position.x - speed, rb.position.y);
+                if (Input.GetKey(KeyCode.W))
+                {
+                    //rb.velocity = new Vector2(rb.velocity.x, speed);
+                    rb.AddForce(new Vector2(rb.velocity.x, speed));
+                    //rb.position = new Vector2(rb.position.x, rb.position.y + speed);
+                }
+                else if (Input.GetKey(KeyCode.S))
+                {
+                    //rb.velocity = new Vector2(rb.velocity.x, -speed);
+                    rb.AddForce(new Vector2(rb.velocity.x, -speed));
+                    //rb.position = new Vector2(rb.position.x, rb.position.y - speed);
+                }
+                else
+                {
+                    //rb.velocity = new Vector2(rb.velocity.x, 0);
+                }
             }
-            else
-            {
-                //rb.velocity = new Vector2(0, rb.velocity.y);
-            }
+            
         
-            if (Input.GetKey(KeyCode.W))
-            {
-                //rb.velocity = new Vector2(rb.velocity.x, speed);
-                rb.position = new Vector2(rb.position.x, rb.position.y + speed);
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                //rb.velocity = new Vector2(rb.velocity.x, -speed);
-                rb.position = new Vector2(rb.position.x, rb.position.y - speed);
-            }
-            else
-            {
-                //rb.velocity = new Vector2(rb.velocity.x, 0);
-            }
         }
     }
 }

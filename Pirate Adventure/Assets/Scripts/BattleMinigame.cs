@@ -16,7 +16,7 @@ public class BattleMinigame : MonoBehaviour
     public float winRight;
     public GameObject bar;
     public float pauseTime = 0.0f;
-    public GameObject sceneManager;
+    public SceneManager sceneManager;
     
     private Rigidbody2D meterRb;
     private SpriteRenderer meterSpriteRenderer;
@@ -50,8 +50,6 @@ public class BattleMinigame : MonoBehaviour
         }
         // Move the bar
         barRb.velocity = new Vector2(speed * direction, 0);
-        
-        // TODO: lose minigame condition
 
         nextActionTime += Time.deltaTime;
         
@@ -69,7 +67,7 @@ public class BattleMinigame : MonoBehaviour
                 else
                 {
                     //Lose Health 
-                    sceneManager.GetComponent<SceneManager>().damagePlayer(1);
+                    sceneManager.damagePlayer(1);
                 }
             }
         }
